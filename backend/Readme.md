@@ -73,7 +73,10 @@ This API provides user authentication and access control via JWT (JSON Web Token
 ```
 
 
-- **Docker Compose**: just clone this repo and run docker-compose.yml [docker-compose.yml up --build]
+- **Docker Compose**: just clone this repo and run docker-compose.yml 
+
+###
+Command is :  docker-compose.yml up --build
 
 
 
