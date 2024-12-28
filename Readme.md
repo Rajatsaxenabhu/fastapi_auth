@@ -45,9 +45,13 @@ This API provides user authentication and access control via JWT (JSON Web Token
 }
 ```
 
+
+### 'JWT validation'
+-**IMP**:  if any time  the access token expire u have to relogin or front end take care by itself
+
 ### `POST /user/employees`
 - **Purpose**: Allows users to add detail of employee.
-- **No JWT Validation**: This route is protected by JWT validation.
+- **JWT Validation**: This route is protected by JWT validation.
   
 #### Request Body:
 ```json
@@ -63,7 +67,7 @@ This API provides user authentication and access control via JWT (JSON Web Token
 
 ### `POST /user/delete`
 - **Purpose**: Allows users to delete the specific employee details.
-- **No JWT Validation**: This route is protected by JWT validation.
+- **JWT Validation**: This route is protected by JWT validation.
   
 #### Request Body:
 ```json
