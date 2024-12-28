@@ -12,8 +12,10 @@ class UserVerify(BaseModel):
 class People(BaseModel):
     name:str
     age:int
-    rollno:int
+    Mobile:int
     email:EmailStr
+    gender:str
+    
 
 class del_data(BaseModel):
     ID:int

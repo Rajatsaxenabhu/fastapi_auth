@@ -1,6 +1,4 @@
 from pydantic_settings import BaseSettings
-import pymysql
-pymysql.install_as_MySQLdb()
 import os
 class Settings(BaseSettings):
     DB_NAME: str

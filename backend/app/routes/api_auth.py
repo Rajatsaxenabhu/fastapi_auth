@@ -10,13 +10,13 @@ from security.secure import create_access_token,create_refresh_token,ACCESS_TOKE
 router = APIRouter()
 
 
-@router.post("/signup")
+@router.post("/auth/signup")
 async def signup(Data:UserCreate,db:Session=Depends(get_db)):
     user_service = UserService(db)
     return UserService.create_user(user_service,user_data=Data)
 
 
-@router.post("/login")
+@router.post("/auth/login")
 async def login(Data:UserVerify,response: Response,db:Session=Depends(get_db)):
     user_service = UserService(db)
     if UserService.verify_user(user_service,user_data=Data):
@@ -25,10 +25,10 @@ async def login(Data:UserVerify,response: Response,db:Session=Depends(get_db)):
         refresh_token = create_refresh_token(data)
         response = JSONResponse({"msg": "Login successful"},status_code=200)
         response.set_cookie(
-        key="access_token", value=access_token, httponly=True, max_age=ACCESS_TOKEN * 60
+        key="access_token", value=access_token, httponly=True, secure=False,max_age=ACCESS_TOKEN * 60
         )
         response.set_cookie(
-            key="refresh_token", value=refresh_token, httponly=True, max_age=REFRESH_TOKEN * 24 * 60 * 60
+            key="refresh_token", value=refresh_token,  httponly=True, secure=False,max_age=REFRESH_TOKEN * 24 * 60 * 60
         )
         return response
     

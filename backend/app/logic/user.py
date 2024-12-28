@@ -52,7 +52,7 @@ class DataService:
         self.db = db
     
     def add_value(self, data: Data) -> Data:
-        db_data = Data(name=data.name, age=data.age, rollno=data.rollno, email=data.email)
+        db_data = Data(name=data.name, age=data.age, Mobile=data.Mobile, email=data.email, gender=data.gender)
         self.db.add(db_data)
         self.db.commit()
         self.db.refresh(db_data)

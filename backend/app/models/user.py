@@ -16,11 +16,12 @@ class User(Base):
 
 class Data(Base):
     __tablename__ = 'data'
-    id: Mapped[int] = mapped_column(primary_key=True,)
+    id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(50))
     age: Mapped[int] = mapped_column(String(50))
-    rollno: Mapped[int] = mapped_column(String(50))
+    Mobile: Mapped[int] = mapped_column(String(50))
     email: Mapped[str] = mapped_column(String(50))
+    gender: Mapped[str] = mapped_column(String(50))
 
     def __repr__(self)->str:
-        return f"User(id={self.id}, name={self.name}, age={self.age}, rollno={self.rollno}, email={self.email})"
+        return f"Data(id={self.id}, name={self.name}, age={self.age}, Mobile={self.Mobile}, email={self.email}, gender={self.gender})"
