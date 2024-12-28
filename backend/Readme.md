@@ -6,6 +6,18 @@ This API provides user authentication and access control via JWT (JSON Web Token
 - **Access Token**: Valid for **1 minute**. Used for authenticating requests to protected routes.
 - **Refresh Token**: Valid for **7 weeks**. Used to obtain a new access token when it expires.
 
+
+## Tech Stack
+
+- **Backend**: FastAPI
+- **Database**: PostgreSQL
+- **Authentication**: JWT (JSON Web Token)
+- **Containerization**: Docker
+- **ORM**: SQLAlchemy
+
+
+
+
 ## Authentication Routes
 
 ### `POST /auth/login`
@@ -60,7 +72,9 @@ This API provides user authentication and access control via JWT (JSON Web Token
 }
 ```
 
--**>**How to run this ans test with postman:
--**>**just clone this repo and run docker-compose.yml [docker-compose.yml up --build]
+
+- **Docker Compose**: just clone this repo and run docker-compose.yml [docker-compose.yml up --build]
+
+
 
 
